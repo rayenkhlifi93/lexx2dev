@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lexx2.dev</title>
+  <meta name="description" content="Portfolio of lexx2.dev — IT Student, Discord Bot Developer, and E-commerce/Shopify Specialist." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- NAVIGATION                                   -->
+  <!-- ============================================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">lexx2<span class="logo__accent">.</span>dev</a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link active">Home</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION                                -->
+  <!-- ============================================ -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content fade-in">
+        <p class="hero__greeting">Hi there, I'm</p>
+        <h1 class="hero__title">
+          lexx2.dev
+        </h1>
+        <p class="hero__subtitle">
+          IT Student &middot; Discord Bot Developer &middot; Shopify Specialist
+        </p>
+        <p class="hero__description">
+          Building robust backend systems, seamless e-commerce experiences,
+          and clean, performant frontend interfaces.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View Work</a>
+          <a href="#contact" class="btn btn--outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero__visual fade-in">
+        <div class="hero__code-card">
+          <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">dev</span> = {</div>
+          <div class="code-line indent"><span class="code-prop">role</span>: <span class="code-string">"Student & Developer"</span>,</div>
+          <div class="code-line indent"><span class="code-prop">stack</span>: [<span class="code-string">"JS"</span>, <span class="code-string">"Node"</span>, <span class="code-string">"Shopify"</span>],</div>
+          <div class="code-line indent"><span class="code-prop">passion</span>: <span class="code-string">"Building cool stuff"</span></div>
+          <div class="code-line">};</div>
+          <div class="code-line"><span class="code-keyword">export</span> <span class="code-keyword">default</span> dev;</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+
+  <!-- ============================================ -->
+  <!-- SERVICES SECTION                            -->
+  <!-- ============================================ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section__header fade-in">
+        <h2 class="section__title">Core Services</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="services__grid">
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Discord Bot Development</h3>
+          <p class="service-card__description">
+            Custom automation, database integrations, backend architecture, and PM2
+            process management for reliable 24/7 operation.
+          </p>
+          <div class="service-card__tags">
+            <span>Node.js</span>
+            <span>Discord.js</span>
+            <span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card__title">E-Commerce &amp; Shopify Setup</h3>
+          <p class="service-card__description">
+            Custom theme configuration, Liquid layout modifications, product page
+            optimization, and full domain/DNS setup.
+          </p>
+          <div class="service-card__tags">
+            <span>Shopify</span>
+            <span>Liquid</span>
+            <span>DNS</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16,18 22,12 16,6"></polyline>
+              <polyline points="8,6 2,12 8,18"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card__title">Premium Web Portfolios</h3>
+          <p class="service-card__description">
+            Lightweight, responsive, and fast-loading web experiences built with
+            modern best practices and zero bloat.
+          </p>
+          <div class="service-card__tags">
+            <span>HTML/CSS</span>
+            <span>Tailwind</span>
+            <span>JS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PROJECTS SECTION                            -->
+  <!-- ============================================ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section__header fade-in">
+        <h2 class="section__title">Featured Projects</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="projects__grid">
+        <div class="project-card fade-in">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #1e0533, #4c1d95);">
+            <div class="project-card__icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Aurora Bot</h3>
+            <p class="project-card__description">
+              A feature-rich Discord bot with auto-moderation, ticket management,
+              custom levels, and a full dashboard interface.
+            </p>
+            <div class="project-card__tags">
+              <span>Discord.js</span>
+              <span>MongoDB</span>
+              <span>PM2</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="#" class="btn btn--small btn--ghost">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #022c22, #065f46);">
+            <div class="project-card__icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Velvet Shop</h3>
+            <p class="project-card__description">
+              A premium Shopify store featuring custom Liquid theming, optimized
+              product filtering, and a seamless checkout flow.
+            </p>
+            <div class="project-card__tags">
+              <span>Shopify</span>
+              <span>Liquid</span>
+              <span>Custom Theme</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="#" class="btn btn--small btn--ghost">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-card__image" style="background: linear-gradient(135deg, #0c1929, #1e3a5f);">
+            <div class="project-card__icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16,18 22,12 16,6"></polyline>
+                <polyline points="8,6 2,12 8,18"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">DevPort</h3>
+            <p class="project-card__description">
+              A drag-and-drop portfolio builder for developers, with markdown
+              support, custom domains, and analytics integration.
+            </p>
+            <div class="project-card__tags">
+              <span>Next.js</span>
+              <span>Tailwind</span>
+              <span>Supabase</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="btn btn--small btn--primary">Live Demo</a>
+              <a href="#" class="btn btn--small btn--ghost">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SKILLS SECTION                              -->
+  <!-- ============================================ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section__header fade-in">
+        <h2 class="section__title">Technical Skills</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="skills__grid fade-in">
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #f0db4f20; color: #f0db4f;">JS</div>
+          <span class="skill-badge__name">JavaScript</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #68a06320; color: #68a063;">Node</div>
+          <span class="skill-badge__name">Node.js</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #8b5cf620; color: #8b5cf6;">D.js</div>
+          <span class="skill-badge__name">Discord.js</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #e34f2620; color: #e34f26;">HTML</div>
+          <span class="skill-badge__name">HTML5</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #1572b620; color: #1572b6;">CSS</div>
+          <span class="skill-badge__name">CSS3</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #95bf4720; color: #95bf47;">Liq</div>
+          <span class="skill-badge__name">Shopify / Liquid</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #f0503320; color: #f05033;">Git</div>
+          <span class="skill-badge__name">Git / GitHub</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #10b98120; color: #10b981;">VPS</div>
+          <span class="skill-badge__name">Linux / VPS Mgmt</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #55555530; color: #aaaaaa;">C</div>
+          <span class="skill-badge__name">C</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #23912030; color: #239120;">C#</div>
+          <span class="skill-badge__name">C#</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #ff660030; color: #ff8533;">XML</div>
+          <span class="skill-badge__name">XML</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #0d948830; color: #14b8a6;">DDT</div>
+          <span class="skill-badge__name">DDT</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #3b82f630; color: #60a5fa;">XSL</div>
+          <span class="skill-badge__name">XSL</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #3776AB30; color: #3776AB;">Py</div>
+          <span class="skill-badge__name">Python</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #777BB430; color: #777BB4;">PHP</div>
+          <span class="skill-badge__name">PHP</span>
+        </div>
+        <div class="skill-badge">
+          <div class="skill-badge__icon" style="background: #e38c0030; color: #f59e0b;">SQL</div>
+          <span class="skill-badge__name">SQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CONTACT SECTION                             -->
+  <!-- ============================================ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section__header fade-in">
+        <h2 class="section__title">Get In Touch</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="contact__links fade-in contact__links--centered">
+          <p class="contact__description">
+            Whether you have a project in mind, a collaboration idea, or just
+            want to say hello — I'd love to hear from you.
+          </p>
+          <div class="contact__profiles contact__profiles--row">
+            <a href="https://github.com/lexx2dev" target="_blank" rel="noopener noreferrer" class="contact__profile">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://discord.com/users/977422743656104036" target="_blank" rel="noopener noreferrer" class="contact__profile">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.1778-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
+              </svg>
+              <span>Discord</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                      -->
+  <!-- ============================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> lexx2.dev. Built with care.</p>
+      <a href="#hero" class="footer__top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
