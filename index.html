@@ -9,9 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <canvas id="particles-canvas"></canvas>
 
   <!-- ============================================ -->
   <!-- NAVIGATION                                   -->
@@ -253,69 +257,69 @@
         <div class="section__divider"></div>
       </div>
       <div class="skills__grid fade-in">
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #f0db4f20; color: #f0db4f;">JS</div>
-          <span class="skill-badge__name">JavaScript</span>
+        <div class="skill-pill">
+          <i class="devicon-javascript-plain colored"></i>
+          <span>JavaScript</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #68a06320; color: #68a063;">Node</div>
-          <span class="skill-badge__name">Node.js</span>
+        <div class="skill-pill">
+          <i class="devicon-nodejs-plain colored"></i>
+          <span>Node.js</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #8b5cf620; color: #8b5cf6;">D.js</div>
-          <span class="skill-badge__name">Discord.js</span>
+        <div class="skill-pill">
+          <svg viewBox="0 0 24 24" fill="#5865F2" width="20" height="20"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.028C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057c2.053 1.507 4.041 2.422 5.993 3.029a.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106c-.653-.247-1.275-.549-1.872-.892a.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.075.075 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.29a.077.077 0 0 1-.006.128c-.598.344-1.22.646-1.873.893a.076.076 0 0 0-.04.106c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028c1.96-.607 3.949-1.522 6.002-3.029a.077.077 0 0 0 .032-.056c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.029zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.419 0 1.334-.955 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.419 0 1.334-.946 2.419-2.157 2.419z"/></svg>
+          <span>Discord.js</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #e34f2620; color: #e34f26;">HTML</div>
-          <span class="skill-badge__name">HTML5</span>
+        <div class="skill-pill">
+          <i class="devicon-html5-plain colored"></i>
+          <span>HTML5</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #1572b620; color: #1572b6;">CSS</div>
-          <span class="skill-badge__name">CSS3</span>
+        <div class="skill-pill">
+          <i class="devicon-css3-plain colored"></i>
+          <span>CSS3</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #95bf4720; color: #95bf47;">Liq</div>
-          <span class="skill-badge__name">Shopify / Liquid</span>
+        <div class="skill-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#95bf47" stroke-width="1.5" width="20" height="20"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span>Shopify / Liquid</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #f0503320; color: #f05033;">Git</div>
-          <span class="skill-badge__name">Git / GitHub</span>
+        <div class="skill-pill">
+          <i class="devicon-git-plain colored"></i>
+          <span>Git / GitHub</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #10b98120; color: #10b981;">VPS</div>
-          <span class="skill-badge__name">Linux / VPS Mgmt</span>
+        <div class="skill-pill">
+          <i class="devicon-linux-plain colored"></i>
+          <span>Linux / VPS Mgmt</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #55555530; color: #aaaaaa;">C</div>
-          <span class="skill-badge__name">C</span>
+        <div class="skill-pill">
+          <i class="devicon-c-plain colored"></i>
+          <span>C</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #23912030; color: #239120;">C#</div>
-          <span class="skill-badge__name">C#</span>
+        <div class="skill-pill">
+          <i class="devicon-csharp-plain colored"></i>
+          <span>C#</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #ff660030; color: #ff8533;">XML</div>
-          <span class="skill-badge__name">XML</span>
+        <div class="skill-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff8533" stroke-width="1.5" width="20" height="20"><path d="M6 4L2 12l4 8"/><path d="M18 4l4 8-4 8"/><path d="M10 4l-2 8 2 8"/><path d="M14 4l2 8-2 8"/></svg>
+          <span>XML</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #0d948830; color: #14b8a6;">DDT</div>
-          <span class="skill-badge__name">DDT</span>
+        <div class="skill-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="1.5" width="20" height="20"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg>
+          <span>DDT</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #3b82f630; color: #60a5fa;">XSL</div>
-          <span class="skill-badge__name">XSL</span>
+        <div class="skill-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+          <span>XSL</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #3776AB30; color: #3776AB;">Py</div>
-          <span class="skill-badge__name">Python</span>
+        <div class="skill-pill">
+          <i class="devicon-python-plain colored"></i>
+          <span>Python</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #777BB430; color: #777BB4;">PHP</div>
-          <span class="skill-badge__name">PHP</span>
+        <div class="skill-pill">
+          <i class="devicon-php-plain colored"></i>
+          <span>PHP</span>
         </div>
-        <div class="skill-badge">
-          <div class="skill-badge__icon" style="background: #e38c0030; color: #f59e0b;">SQL</div>
-          <span class="skill-badge__name">SQL</span>
+        <div class="skill-pill">
+          <i class="devicon-mysql-plain colored"></i>
+          <span>SQL</span>
         </div>
       </div>
     </div>
@@ -364,6 +368,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
