@@ -297,12 +297,3 @@ updateGradient();
 // DYNAMIC FOOTER YEAR
 // =============================================
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// =============================================
-// PRELOADER
-// =============================================
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('preloader').classList.add('hidden');
-  }, 4000);
-});
