@@ -256,6 +256,40 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 
 // =============================================
+// SMOOTH SECTION TRANSITION FOR NAVIGATION
+// =============================================
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href === '#' || !href) return;
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+    const headerOffset = 84;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top, behavior: 'smooth' });
+
+    const items = target.querySelectorAll(':scope > .container > *');
+    if (!items.length) return;
+
+    gsap.fromTo(
+      items,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+        clearProps: 'all',
+        overwrite: 'auto'
+      }
+    );
+  });
+});
+
+// =============================================
 // HEADER BORDER ON SCROLL
 // =============================================
 const header = document.getElementById('header');
@@ -379,4 +413,131 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
   setup();
   start();
+})();
+
+// =============================================
+// CLICK SPARK EFFECT (vanilla ClickSpark)
+// =============================================
+(function () {
+  const canvas = document.getElementById('click-spark-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const CONFIG = {
+    color: '#ffffff',
+    size: 10,
+    radius: 30,
+    count: 8,
+    duration: 500,
+    extraScale: 1
+  };
+
+  let sparks = [];
+  let lastTimestamp = null;
+  let rafId = null;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function easeOut(t) {
+    return t * (2 - t);
+  }
+
+  function draw(timestamp) {
+    if (lastTimestamp === null) lastTimestamp = timestamp;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    sparks = sparks.filter((spark) => {
+      const elapsed = timestamp - spark.startTime;
+      if (elapsed >= CONFIG.duration) return false;
+
+      const progress = elapsed / CONFIG.duration;
+      const eased = easeOut(progress);
+      const distance = eased * CONFIG.radius * CONFIG.extraScale;
+      const lineLength = CONFIG.size * (1 - eased);
+
+      const x1 = spark.x + distance * Math.cos(spark.angle);
+      const y1 = spark.y + distance * Math.sin(spark.angle);
+      const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
+      const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
+
+      ctx.strokeStyle = CONFIG.color;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+
+      return true;
+    });
+
+    if (sparks.length > 0) {
+      rafId = requestAnimationFrame(draw);
+    } else {
+      rafId = null;
+      lastTimestamp = null;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  function ensureAnimation() {
+    if (rafId === null) {
+      lastTimestamp = null;
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    const now = performance.now();
+    for (let i = 0; i < CONFIG.count; i++) {
+      sparks.push({
+        x: e.clientX,
+        y: e.clientY,
+        angle: (2 * Math.PI * i) / CONFIG.count,
+        startTime: now
+      });
+    }
+    ensureAnimation();
+  });
+
+  window.addEventListener('resize', resize);
+  resize();
+})();
+
+// =============================================
+// BORDER GLOW (vanilla BorderGlow)
+// =============================================
+(function () {
+  const cards = document.querySelectorAll('.border-glow-card');
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    card.addEventListener('pointermove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+
+      const dx = x - cx;
+      const dy = y - cy;
+      let kx = Infinity;
+      let ky = Infinity;
+      if (dx !== 0) kx = cx / Math.abs(dx);
+      if (dy !== 0) ky = cy / Math.abs(dy);
+      const edge = Math.min(Math.max(1 / Math.min(kx, ky), 0), 1);
+
+      let angle = 0;
+      if (dx !== 0 || dy !== 0) {
+        angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+        if (angle < 0) angle += 360;
+      }
+
+      card.style.setProperty('--edge-proximity', `${(edge * 100).toFixed(3)}`);
+      card.style.setProperty('--cursor-angle', `${angle.toFixed(3)}deg`);
+    });
+  });
 })();
