@@ -605,15 +605,22 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   justify-content: center;
   color: rgba(255, 255, 255, 0.3);
   overflow: hidden;
+  position: relative;
+}
+
+.project-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--bg-card) 100%);
+  pointer-events: none;
 }
 
 .project-card__avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  display: block;
 }
 
 .project-card__body {
@@ -693,8 +700,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .skill-pill:hover {
   border-color: var(--accent-light);
   background: rgba(18, 17, 22, 0.95);
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 0 24px rgba(44, 102, 110, 0.2), 0 4px 20px rgba(7, 57, 60, 0.15);
 }
 
 .skill-pill:hover i,
@@ -711,6 +716,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.skill-pill img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .skill-pill span {
