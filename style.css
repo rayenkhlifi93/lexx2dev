@@ -2,20 +2,20 @@
 /* CUSTOM PROPERTIES                            */
 /* ============================================ */
 :root {
-  --bg-primary: #0a090c;
-  --bg-secondary: #0f0e12;
-  --bg-card: #121116;
-  --bg-card-hover: #18171c;
-  --border: #1a191e;
-  --border-hover: #2a292e;
-  --text-primary: #f0edee;
-  --text-secondary: #c5c0c3;
-  --text-muted: #8a8588;
-  --accent-primary: #07393c;
-  --accent-secondary: #2c666e;
-  --accent-light: #90ddf0;
-  --gradient-hero: linear-gradient(135deg, #07393c, #2c666e);
-  --gradient-card: linear-gradient(135deg, rgba(7, 57, 60, 0.12), rgba(44, 102, 110, 0.06));
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: #0f0f0f;
+  --bg-card-hover: #181818;
+  --border: #1f1f1f;
+  --border-hover: #2e2e2e;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #737373;
+  --accent-primary: #f5f5f5;
+  --accent-secondary: #a3a3a3;
+  --accent-light: #e0e0e0;
+  --gradient-hero: linear-gradient(135deg, #f5f5f5, #a3a3a3);
+  --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --max-width: 1100px;
   --header-height: 64px;
@@ -44,12 +44,12 @@ body {
   -webkit-tap-highlight-color: transparent;
   background-color: var(--bg-primary);
   background-image:
-    radial-gradient(ellipse 600px 500px at 80% 15%, rgba(7, 57, 60, 0.15), transparent 70%),
-    radial-gradient(ellipse 500px 400px at 15% 40%, rgba(44, 102, 110, 0.1), transparent 70%),
-    radial-gradient(ellipse 400px 400px at 70% 65%, rgba(7, 57, 60, 0.1), transparent 70%),
-    radial-gradient(ellipse 350px 350px at 25% 80%, rgba(44, 102, 110, 0.08), transparent 70%),
-    radial-gradient(ellipse 450px 450px at 50% 50%, rgba(144, 221, 240, 0.03), transparent 70%),
-    radial-gradient(circle, rgba(144, 221, 240, 0.04) 1px, transparent 1px);
+    radial-gradient(ellipse 600px 500px at 80% 15%, rgba(255, 255, 255, 0.045), transparent 70%),
+    radial-gradient(ellipse 500px 400px at 15% 40%, rgba(255, 255, 255, 0.03), transparent 70%),
+    radial-gradient(ellipse 400px 400px at 70% 65%, rgba(255, 255, 255, 0.025), transparent 70%),
+    radial-gradient(ellipse 350px 350px at 25% 80%, rgba(255, 255, 255, 0.02), transparent 70%),
+    radial-gradient(ellipse 450px 450px at 50% 50%, rgba(255, 255, 255, 0.015), transparent 70%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, 48px 48px;
   background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   background-attachment: fixed;
@@ -61,7 +61,7 @@ body {
   cursor: none;
 }
 
-a, button, .skill-pill, .service-card, .project-card, .contact__profile { cursor: none; }
+a, button, .service-card, .project-card, .contact__profile { cursor: none; }
 
 /* Very subtle noise texture */
 body::after {
@@ -106,7 +106,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #f0edee, #90ddf0);
+  background: linear-gradient(135deg, #ffffff, #a3a3a3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -118,7 +118,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   background: var(--gradient-hero);
   border-radius: 4px;
   margin: 16px auto 0;
-  box-shadow: 0 0 12px rgba(7, 57, 60, 0.4);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
 /* ============================================ */
@@ -143,7 +143,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 #cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(144, 221, 240, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(2px);
   transition: width 0.4s ease, height 0.4s ease, border-color 0.4s ease, background 0.4s ease;
 }
@@ -152,8 +152,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   width: 60px;
   height: 60px;
   border-color: var(--accent-light);
-  background: rgba(144, 221, 240, 0.06);
-  box-shadow: 0 0 30px rgba(144, 221, 240, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
 }
 
 #cursor-dot.cursor-hover {
@@ -302,11 +302,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .hero__greeting {
   font-size: 1rem;
   font-weight: 500;
-  color: #90ddf0;
+  color: var(--accent-light);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 12px;
-  text-shadow: 0 0 20px rgba(144, 221, 240, 0.3);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .hero__title {
@@ -318,7 +318,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #07393c, #2c666e, #90ddf0, #2c666e, #07393c);
+  background: linear-gradient(135deg, #ffffff, #b3b3b3, #ffffff, #b3b3b3, #ffffff);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -371,7 +371,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   position: absolute;
   inset: -1px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(7, 57, 60, 0.3), rgba(144, 221, 240, 0.1), rgba(44, 102, 110, 0.3));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.06));
   z-index: -1;
   opacity: 0;
   transition: opacity var(--transition);
@@ -412,9 +412,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, #90ddf0, transparent);
+  background: linear-gradient(to bottom, #e5e5e5, transparent);
   animation: scrollPulse 2s ease-in-out infinite;
-  box-shadow: 0 0 6px rgba(144, 221, 240, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
 }
 
 @keyframes scrollPulse {
@@ -440,15 +440,15 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 .btn--primary {
   background: var(--accent-primary);
-  color: #fff;
+  color: #000;
   border-color: var(--accent-primary);
 }
 
 .btn--primary:hover {
-  background: #062c2e;
-  border-color: #062c2e;
+  background: #d4d4d4;
+  border-color: #d4d4d4;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(7, 57, 60, 0.3), 0 0 20px rgba(44, 102, 110, 0.15);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08), 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .btn--outline {
@@ -532,7 +532,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   background: var(--bg-card-hover);
   border-color: var(--accent-secondary);
   transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(44, 102, 110, 0.15), 0 12px 40px rgba(7, 57, 60, 0.15);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05), 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 .service-card__icon {
@@ -572,8 +572,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   font-size: 0.75rem;
   font-weight: 500;
   padding: 4px 12px;
-  background: rgba(7, 57, 60, 0.15);
-  color: #90ddf0;
+  background: rgba(255, 255, 255, 0.06);
+  color: #d4d4d4;
   border-radius: 100px;
 }
 
@@ -602,7 +602,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .project-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(44, 102, 110, 0.1), 0 12px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.04), 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .project-card__image {
@@ -662,8 +662,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   font-size: 0.72rem;
   font-weight: 600;
   padding: 4px 12px;
-  background: rgba(144, 221, 240, 0.08);
-  border: 1px solid rgba(144, 221, 240, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--accent-light);
   border-radius: 100px;
   letter-spacing: 0.02em;
@@ -679,64 +679,88 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 /* ============================================ */
 /* SKILLS SECTION                               */
 /* ============================================ */
-.skills__grid {
+
+/* ============================================ */
+/* LOGO LOOP MARQUEE                            */
+/* ============================================ */
+.logoloop {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 48px;
+
+  --logoloop-gap: 48px;
+  --logoloop-logoHeight: 50px;
+  --logoloop-fadeColor: #000000;
+}
+
+.logoloop__track {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  max-width: 700px;
-  margin: 0 auto;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+  position: relative;
+  z-index: 0;
 }
 
-.skill-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(18, 17, 22, 0.85);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 8px 20px 8px 12px;
-  transition:
-    transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 250ms ease,
-    box-shadow 250ms ease,
-    background 250ms ease;
-  backdrop-filter: blur(4px);
-}
-
-.skill-pill:hover {
-  border-color: var(--accent-light);
-  background: rgba(18, 17, 22, 0.95);
-}
-
-.skill-pill:hover i,
-.skill-pill:hover svg {
-  transform: scale(1.15);
-}
-
-.skill-pill i,
-.skill-pill svg {
-  font-size: 1.3rem;
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
+.logoloop__list {
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.skill-pill img {
-  width: 22px;
-  height: 22px;
+.logoloop__item {
+  flex: 0 0 auto;
+  margin-right: var(--logoloop-gap);
+  font-size: var(--logoloop-logoHeight);
+  line-height: 1;
+}
+
+.logoloop__item:last-child {
+  margin-right: var(--logoloop-gap);
+}
+
+.logoloop__item img {
+  height: var(--logoloop-logoHeight);
+  width: auto;
+  display: block;
   object-fit: contain;
-  flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
+  opacity: 0.55;
 }
 
-.skill-pill span {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  white-space: nowrap;
+.logoloop--scale-hover .logoloop__item:hover img {
+  transform: scale(1.15);
+  transform-origin: center center;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logoloop--fade::before,
+.logoloop--fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(24px, 8%, 120px);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.logoloop--fade::before {
+  left: 0;
+  background: linear-gradient(to right, var(--logoloop-fadeColor) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.logoloop--fade::after {
+  right: 0;
+  background: linear-gradient(to left, var(--logoloop-fadeColor) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* ============================================ */
@@ -934,7 +958,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
   .nav__link:hover,
   .nav__link.active {
-    background: rgba(144, 221, 240, 0.08);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .nav__link::after {
@@ -985,16 +1009,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     grid-template-columns: 1fr;
   }
 
-  .skills__grid {
-    gap: 10px;
-  }
-
-  .skill-pill {
-    padding: 6px 14px 6px 10px;
-  }
-
-  .skill-pill span {
-    font-size: 0.8rem;
+  .logoloop {
+    margin-bottom: 32px;
+    --logoloop-gap: 32px;
+    --logoloop-logoHeight: 32px;
   }
 
   .contact__profiles--row {

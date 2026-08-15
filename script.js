@@ -25,7 +25,7 @@ lerpRing();
 
 // Cursor hover states
 const cursorTargets = document.querySelectorAll(
-  'a, button, .skill-pill, .service-card, .project-card, .contact__profile, .btn, .nav__link'
+  'a, button, .service-card, .project-card, .contact__profile, .btn, .nav__link'
 );
 
 cursorTargets.forEach(el => {
@@ -80,7 +80,7 @@ class Particle {
     this.speedX = (Math.random() - 0.5) * 0.3;
     this.speedY = (Math.random() - 0.5) * 0.3;
     this.opacity = Math.random() * 0.4 + 0.1;
-    this.color = ['rgba(144, 221, 240,', 'rgba(44, 102, 110,', 'rgba(7, 57, 60,'][Math.floor(Math.random() * 3)];
+    this.color = ['rgba(255, 255, 255,', 'rgba(160, 160, 160,', 'rgba(120, 120, 120,'][Math.floor(Math.random() * 3)];
   }
   update() {
     this.x += this.speedX;
@@ -127,7 +127,7 @@ function connectParticles() {
       if (dist < 140) {
         const opacity = (1 - dist / 140) * 0.12;
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(144, 221, 240, ${opacity})`;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
         ctx.lineWidth = 0.6;
         ctx.moveTo(particles[a].x, particles[a].y);
         ctx.lineTo(particles[b].x, particles[b].y);
@@ -193,12 +193,11 @@ gsap.from('.project-card', {
 });
 
 // Skills stagger
-gsap.from('.skill-pill', {
-  scrollTrigger: { trigger: '.skills__grid', start: 'top 85%' },
+gsap.from('.logoloop', {
+  scrollTrigger: { trigger: '.logoloop', start: 'top 85%' },
   y: 30,
   opacity: 0,
-  duration: 0.4,
-  stagger: 0.04,
+  duration: 0.5,
   ease: 'power2.out'
 });
 
@@ -262,7 +261,7 @@ window.addEventListener('scroll', updateActiveLink);
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
-  header.style.borderColor = window.scrollY > 20 ? '#2a292e' : '#1a191e';
+  header.style.borderColor = window.scrollY > 20 ? '#2e2e2e' : '#1f1f1f';
 });
 
 // =============================================
@@ -297,3 +296,87 @@ updateGradient();
 // DYNAMIC FOOTER YEAR
 // =============================================
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// =============================================
+// LOGO LOOP MARQUEE (vanilla LogoLoop)
+// =============================================
+(function () {
+  const container = document.querySelector('.logoloop');
+  const track = document.querySelector('.logoloop__track');
+  const firstList = track && track.querySelector('.logoloop__list');
+  if (!container || !track || !firstList) return;
+
+  const speed = 80; // px per second
+  const hoverSpeed = 0; // pause on hover
+  const SMOOTH_TAU = 0.25;
+  const COPY_HEADROOM = 2;
+  const MIN_COPIES = 2;
+
+  let seqWidth = 0;
+  let offset = 0;
+  let velocity = 0;
+  let lastTimestamp = null;
+  let rafId = null;
+  let isHovered = false;
+
+  function setup() {
+    const rect = firstList.getBoundingClientRect();
+    if (rect.width <= 0) return;
+
+    seqWidth = Math.ceil(rect.width);
+    const containerWidth = container.clientWidth;
+    const copiesNeeded = Math.max(
+      MIN_COPIES,
+      Math.ceil(containerWidth / seqWidth) + COPY_HEADROOM
+    );
+
+    while (track.children.length < copiesNeeded) {
+      const clone = firstList.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    }
+    while (track.children.length > copiesNeeded) {
+      track.removeChild(track.lastChild);
+    }
+
+    offset = ((offset % seqWidth) + seqWidth) % seqWidth;
+  }
+
+  function animate(timestamp) {
+    if (lastTimestamp === null) lastTimestamp = timestamp;
+    const dt = Math.max(0, timestamp - lastTimestamp) / 1000;
+    lastTimestamp = timestamp;
+
+    const target = isHovered ? hoverSpeed : speed;
+    const easing = 1 - Math.exp(-dt / SMOOTH_TAU);
+    velocity += (target - velocity) * easing;
+
+    if (seqWidth > 0) {
+      offset = ((offset + velocity * dt) % seqWidth + seqWidth) % seqWidth;
+      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+    }
+
+    rafId = requestAnimationFrame(animate);
+  }
+
+  function start() {
+    if (rafId !== null) return;
+    lastTimestamp = null;
+    rafId = requestAnimationFrame(animate);
+  }
+
+  firstList.querySelectorAll('img').forEach((img) => {
+    if (img.complete) setup();
+    img.addEventListener('load', setup);
+    img.addEventListener('error', setup);
+  });
+
+  container.addEventListener('mouseenter', () => { isHovered = true; });
+  container.addEventListener('mouseleave', () => { isHovered = false; });
+
+  window.addEventListener('resize', setup);
+  window.addEventListener('load', setup);
+
+  setup();
+  start();
+})();
