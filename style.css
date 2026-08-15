@@ -41,6 +41,7 @@ html {
 
 body {
   font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
   background-color: var(--bg-primary);
   background-image:
     radial-gradient(ellipse 600px 500px at 80% 15%, rgba(7, 57, 60, 0.15), transparent 70%),
@@ -178,23 +179,29 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 /* ============================================ */
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--header-height);
-  background: rgba(10, 9, 12, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  transition: border-color var(--transition);
+  width: 100%;
+  max-width: var(--max-width);
+  border-radius: 50px;
+  background: rgba(18, 17, 22, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  gap: 32px;
+  padding: 10px 22px;
+  width: auto;
+  max-width: none;
 }
 
 .logo {
@@ -854,6 +861,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 /* RESPONSIVE — MOBILE                         */
 /* ============================================ */
 @media (max-width: 640px) {
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
   .section {
     padding: 64px 0;
   }
@@ -862,20 +877,38 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     margin-bottom: 40px;
   }
 
-  /* Mobile nav */
+  /* Floating island header on mobile */
+  .header {
+    top: 12px;
+    border-radius: 24px;
+    max-width: calc(100% - 40px);
+  }
+
+  .header__inner {
+    gap: 16px;
+    padding: 8px 16px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+
+  /* Mobile nav dropdown — rounded floating panel */
   .nav {
     position: fixed;
-    top: var(--header-height);
-    left: 0;
-    right: 0;
-    background: rgba(10, 9, 12, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 24px;
-    transform: translateY(-110%);
+    top: 78px;
+    left: 20px;
+    right: 20px;
+    background: rgba(18, 17, 22, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-12px);
     opacity: 0;
-    transition: transform 350ms ease, opacity 350ms ease;
+    transition: transform 300ms ease, opacity 300ms ease;
     pointer-events: none;
   }
 
@@ -887,26 +920,53 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
   .nav__list {
     flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    gap: 4px;
+    align-items: stretch;
   }
 
   .nav__link {
     font-size: 1rem;
+    display: block;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .nav__link:hover,
+  .nav__link.active {
+    background: rgba(144, 221, 240, 0.08);
+  }
+
+  .nav__link::after {
+    display: none;
   }
 
   .hamburger {
     display: flex;
+    padding: 10px;
+    margin-right: -6px;
   }
 
   .hero {
     min-height: auto;
-    padding-bottom: 60px;
+    padding-bottom: 56px;
+  }
+
+  .hero__inner {
+    padding: 24px 0 0;
+  }
+
+  .hero__title {
+    font-size: clamp(2.2rem, 12vw, 3rem);
+  }
+
+  .hero__actions .btn {
+    flex: 1;
   }
 
   .hero__code-card {
-    font-size: 0.75rem;
-    padding: 20px 24px;
+    font-size: 0.7rem;
+    padding: 20px 20px;
   }
 
   .hero__scroll-indicator {
@@ -915,6 +975,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
   .services__grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 28px 22px;
   }
 
   .projects__grid {
@@ -933,9 +997,30 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     font-size: 0.8rem;
   }
 
+  .contact__profiles--row {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
   .footer__inner {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .contact__profiles--row {
+    flex-direction: column;
+    gap: 12px;
   }
 }
